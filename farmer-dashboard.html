@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Farmer Dashboard – Mana Raithu Market</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<!-- ── Sidebar ───────────────────────────────────────────── -->
+<aside class="sidebar">
+  <div class="sidebar-logo">
+    <div class="logo-icon"><i class="fa-solid fa-seedling"></i></div>
+    <div class="logo-text"><div class="primary">మన రైతు Market</div><div class="secondary">Farmer Panel</div></div>
+  </div>
+  <div class="sidebar-section">
+    <div class="sidebar-section-label">Main</div>
+    <a class="sidebar-link active" href="farmer-dashboard.html"><i class="fa-solid fa-gauge"></i> Dashboard</a>
+    <a class="sidebar-link" href="marketplace.html"><i class="fa-solid fa-store"></i> My Listings</a>
+    <a class="sidebar-link" href="#"><i class="fa-solid fa-boxes-stacked"></i> Inventory <span class="sidebar-badge">3</span></a>
+    <a class="sidebar-link" href="#"><i class="fa-solid fa-bag-shopping"></i> Orders <span class="sidebar-badge">5</span></a>
+    <a class="sidebar-link" href="tracking.html"><i class="fa-solid fa-truck"></i> Deliveries</a>
+  </div>
+  <div class="sidebar-section" style="margin-top:16px;">
+    <div class="sidebar-section-label">Finance</div>
+    <a class="sidebar-link" href="#"><i class="fa-solid fa-wallet"></i> Earnings</a>
+    <a class="sidebar-link" href="#"><i class="fa-solid fa-file-invoice"></i> Payments</a>
+    <a class="sidebar-link" href="#"><i class="fa-solid fa-chart-bar"></i> Reports</a>
+  </div>
+  <div class="sidebar-section" style="margin-top:16px;">
+    <div class="sidebar-section-label">Profile</div>
+    <a class="sidebar-link" href="verification.html"><i class="fa-solid fa-id-card"></i> Verification</a>
+    <a class="sidebar-link" href="gallery.html"><i class="fa-solid fa-images"></i> Farm Gallery</a>
+    <a class="sidebar-link" href="reviews.html"><i class="fa-solid fa-star"></i> Reviews</a>
+    <a class="sidebar-link" href="contact.html"><i class="fa-solid fa-headset"></i> Support</a>
+  </div>
+  <div class="sidebar-section" style="margin-top:16px;">
+    <a class="sidebar-link" href="index.html"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+    <a class="sidebar-link" href="#" style="color:rgba(255,100,100,0.7);"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+  </div>
+</aside>
+
+<!-- ── Top Bar ────────────────────────────────────────────── -->
+<div class="dashboard-topbar">
+  <div class="topbar-left">
+    <div class="search-bar">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <input type="text" placeholder="Search crops, orders, buyers..."/>
+    </div>
+  </div>
+  <div class="topbar-right">
+    <button class="lang-btn">తె / EN</button>
+    <div class="notif-btn"><i class="fa-solid fa-bell"></i><div class="notif-dot"></div></div>
+    <div class="notif-btn"><i class="fa-solid fa-comment"></i></div>
+    <div class="profile-pill">
+      <div class="profile-avatar"><i class="fa-solid fa-user"></i></div>
+      <span>Ramaiah Reddy</span>
+      <i class="fa-solid fa-chevron-down" style="font-size:0.7rem;color:var(--text-muted);"></i>
+    </div>
+  </div>
+</div>
+
+<!-- ── Main Content ───────────────────────────────────────── -->
+<main class="dashboard-main">
+
+  <!-- Farmer Profile Card -->
+  <div class="farmer-profile-card">
+    <div class="farmer-photo"><i class="fa-solid fa-user-tie"></i></div>
+    <div style="flex:1;">
+      <div class="tag">🌾 Verified Farmer · Kurnool District</div>
+      <h3>Ramaiah Reddy</h3>
+      <div class="meta">📍 Adoni, Andhra Pradesh &nbsp;|&nbsp; 🏡 4.5 Acres Farm Land</div>
+      <div class="farmer-meta-row">
+        <div class="farmer-meta-item"><div class="val">₹2.4L</div><div class="lbl">This Season</div></div>
+        <div class="farmer-meta-item"><div class="val">48</div><div class="lbl">Orders Done</div></div>
+        <div class="farmer-meta-item"><div class="val">4.8★</div><div class="lbl">Rating</div></div>
+        <div class="farmer-meta-item"><div class="val">5</div><div class="lbl">Crops Listed</div></div>
+      </div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px;align-items:flex-end;">
+      <span class="badge badge-green"><i class="fa-solid fa-circle-check"></i> Verified</span>
+      <a href="marketplace.html" class="btn btn-gold btn-sm"><i class="fa-solid fa-plus"></i> Add Crop</a>
+    </div>
+  </div>
+
+  <!-- KPI Cards -->
+  <div class="kpi-grid">
+    <div class="kpi-card kpi-green">
+      <div class="kpi-icon"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+      <div class="kpi-val">₹84,240</div>
+      <div class="kpi-label">This Month Earnings</div>
+      <div class="kpi-change up"><i class="fa-solid fa-arrow-up"></i> +18% from last month</div>
+    </div>
+    <div class="kpi-card kpi-gold">
+      <div class="kpi-icon"><i class="fa-solid fa-bag-shopping"></i></div>
+      <div class="kpi-val">23</div>
+      <div class="kpi-label">Orders This Month</div>
+      <div class="kpi-change up"><i class="fa-solid fa-arrow-up"></i> +5 from last month</div>
+    </div>
+    <div class="kpi-card kpi-blue">
+      <div class="kpi-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+      <div class="kpi-val">1,240 kg</div>
+      <div class="kpi-label">Total Inventory</div>
+      <div class="kpi-change down"><i class="fa-solid fa-arrow-down"></i> -120 kg sold today</div>
+    </div>
+    <div class="kpi-card kpi-orange">
+      <div class="kpi-icon"><i class="fa-solid fa-star"></i></div>
+      <div class="kpi-val">4.8 / 5</div>
+      <div class="kpi-label">Average Rating</div>
+      <div class="kpi-change up"><i class="fa-solid fa-arrow-up"></i> +0.2 this season</div>
+    </div>
+  </div>
+
+  <!-- Orders + Notifications -->
+  <div class="dash-grid-3">
+    <div class="widget-card">
+      <div class="widget-header">
+        <h4><i class="fa-solid fa-list-check" style="color:var(--green-mid);margin-right:8px;"></i>Recent Orders</h4>
+        <a href="#" class="btn btn-outline btn-sm">View All</a>
+      </div>
+      <div class="widget-body">
+        <div class="order-row">
+          <div class="order-info"><h5>Hotel Srinivasa Palace</h5><p>50 kg Tomato · Bulk Order</p></div>
+          <div class="order-meta"><div class="price">₹1,400</div><span class="badge badge-gold">Pending</span></div>
+        </div>
+        <div class="order-row">
+          <div class="order-info"><h5>Fresh Mart Supermarket</h5><p>30 kg Onion + 20 kg Chilli</p></div>
+          <div class="order-meta"><div class="price">₹1,560</div><span class="badge badge-green">Confirmed</span></div>
+        </div>
+        <div class="order-row">
+          <div class="order-info"><h5>Event Hub Catering</h5><p>100 kg Mixed Vegetables</p></div>
+          <div class="order-meta"><div class="price">₹3,200</div><span class="badge badge-orange">In Transit</span></div>
+        </div>
+        <div class="order-row">
+          <div class="order-info"><h5>Retail Customer — Kurnool</h5><p>5 kg Tomato · Direct</p></div>
+          <div class="order-meta"><div class="price">₹140</div><span class="badge badge-green">Delivered ✓</span></div>
+        </div>
+        <div class="order-row">
+          <div class="order-info"><h5>Spice Garden Restaurant</h5><p>25 kg Green Chillies</p></div>
+          <div class="order-meta"><div class="price">₹1,125</div><span class="badge badge-green">Delivered ✓</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="widget-card">
+      <div class="widget-header">
+        <h4><i class="fa-solid fa-bell" style="color:var(--gold);margin-right:8px;"></i>Notifications</h4>
+        <span class="badge badge-gold">5 new</span>
+      </div>
+      <div class="widget-body">
+        <div class="notif-item">
+          <div class="notif-dot-icon" style="background:#1db954;"></div>
+          <div><p>New bulk order from <strong>Hotel Srinivasa</strong> for 50 kg Tomato</p><time>2 min ago</time></div>
+        </div>
+        <div class="notif-item">
+          <div class="notif-dot-icon" style="background:var(--gold);"></div>
+          <div><p>Market price alert: Tomato up ₹3/kg today</p><time>1 hr ago</time></div>
+        </div>
+        <div class="notif-item">
+          <div class="notif-dot-icon" style="background:var(--green-mid);"></div>
+          <div><p>Payment received ₹1,125 from Spice Garden</p><time>3 hr ago</time></div>
+        </div>
+        <div class="notif-item">
+          <div class="notif-dot-icon" style="background:#4285f4;"></div>
+          <div><p>Your Aadhaar verification is <strong>approved</strong></p><time>Yesterday</time></div>
+        </div>
+        <div class="notif-item">
+          <div class="notif-dot-icon" style="background:var(--gold);"></div>
+          <div><p>Review received: ⭐⭐⭐⭐⭐ from Fresh Mart</p><time>2 days ago</time></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Inventory + Deliveries -->
+  <div class="dash-grid-2">
+    <div class="widget-card">
+      <div class="widget-header">
+        <h4><i class="fa-solid fa-warehouse" style="color:var(--green-mid);margin-right:8px;"></i>Inventory Overview</h4>
+        <a href="#" class="btn btn-outline btn-sm">Manage</a>
+      </div>
+      <div class="widget-body">
+        <div class="inventory-bar">
+          <div class="inv-label"><span>🍅 Tomato</span><span>450/500 kg</span></div>
+          <div class="inv-track"><div class="inv-fill" style="width:90%;"></div></div>
+        </div>
+        <div class="inventory-bar">
+          <div class="inv-label"><span>🌶️ Green Chilli</span><span>80/200 kg</span></div>
+          <div class="inv-track"><div class="inv-fill" style="width:40%;background:linear-gradient(90deg,var(--gold),var(--gold-light));"></div></div>
+        </div>
+        <div class="inventory-bar">
+          <div class="inv-label"><span>🧅 Onion</span><span>620/800 kg</span></div>
+          <div class="inv-track"><div class="inv-fill" style="width:77%;background:linear-gradient(90deg,#4285f4,#74a9f7);"></div></div>
+        </div>
+        <div class="inventory-bar">
+          <div class="inv-label"><span>🥑 Brinjal</span><span>90/120 kg</span></div>
+          <div class="inv-track"><div class="inv-fill" style="width:75%;background:linear-gradient(90deg,#9c4bd8,#c07af5);"></div></div>
+        </div>
+        <div class="inventory-bar">
+          <div class="inv-label"><span>🌾 Groundnut</span><span>0/300 kg</span></div>
+          <div class="inv-track"><div class="inv-fill" style="width:0%;"></div></div>
+        </div>
+        <div style="margin-top:14px;padding:12px;background:var(--green-pale);border-radius:var(--radius-sm);font-size:0.82rem;color:var(--green-dark);">
+          <i class="fa-solid fa-circle-info" style="margin-right:6px;"></i>Groundnut stock empty — <a href="marketplace.html" style="font-weight:700;text-decoration:underline;">Harvest & restock</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="widget-card">
+      <div class="widget-header">
+        <h4><i class="fa-solid fa-truck" style="color:var(--green-mid);margin-right:8px;"></i>Delivery Status</h4>
+        <a href="tracking.html" class="btn btn-outline btn-sm">Track All</a>
+      </div>
+      <div class="widget-body">
+        <div class="order-row">
+          <div class="order-info">
+            <h5>Order #MRM-2847</h5>
+            <p>Event Hub Catering · 100 kg Mixed Veg</p>
+          </div>
+          <div class="order-meta"><span class="badge badge-orange"><i class="fa-solid fa-truck"></i> In Transit</span></div>
+        </div>
+        <div class="order-row">
+          <div class="order-info">
+            <h5>Order #MRM-2844</h5>
+            <p>Fresh Mart · 30 kg Onion</p>
+          </div>
+          <div class="order-meta"><span class="badge badge-green">✓ Delivered</span></div>
+        </div>
+        <div class="order-row">
+          <div class="order-info">
+            <h5>Order #MRM-2851</h5>
+            <p>Hotel Srinivasa · 50 kg Tomato</p>
+          </div>
+          <div class="order-meta"><span class="badge badge-gold">📦 Packing</span></div>
+        </div>
+        <div style="margin-top:14px;padding:14px;border:1px solid var(--border);border-radius:var(--radius-sm);">
+          <div style="font-size:0.78rem;font-weight:700;margin-bottom:8px;">Driver Info — Order #MRM-2847</div>
+          <div style="font-size:0.82rem;display:flex;gap:12px;align-items:center;">
+            <span style="font-size:1.5rem;">🚚</span>
+            <div><strong>Ravi Kumar</strong><br/><span style="color:var(--text-muted);">AP 22 AB 1234 · ETA: 45 min</span></div>
+            <a href="tel:+918919401890" class="btn btn-primary btn-sm" style="margin-left:auto;"><i class="fa-solid fa-phone"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Recent Activity -->
+  <div class="widget-card" style="margin-bottom:22px;">
+    <div class="widget-header">
+      <h4><i class="fa-solid fa-clock-rotate-left" style="color:var(--green-mid);margin-right:8px;"></i>Recent Activity</h4>
+    </div>
+    <div class="widget-body" style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;">
+      <div style="text-align:center;padding:16px;background:var(--green-pale);border-radius:var(--radius-md);">
+        <div style="font-size:1.6rem;margin-bottom:6px;">📦</div>
+        <div style="font-size:0.78rem;font-weight:700;">New Order</div>
+        <div style="font-size:0.7rem;color:var(--text-muted);">Hotel Srinivasa — 2 min ago</div>
+      </div>
+      <div style="text-align:center;padding:16px;background:#fff8e6;border-radius:var(--radius-md);">
+        <div style="font-size:1.6rem;margin-bottom:6px;">💰</div>
+        <div style="font-size:0.78rem;font-weight:700;">Payment Received</div>
+        <div style="font-size:0.7rem;color:var(--text-muted);">₹1,125 — 3 hr ago</div>
+      </div>
+      <div style="text-align:center;padding:16px;background:var(--green-pale);border-radius:var(--radius-md);">
+        <div style="font-size:1.6rem;margin-bottom:6px;">⭐</div>
+        <div style="font-size:0.78rem;font-weight:700;">5-Star Review</div>
+        <div style="font-size:0.7rem;color:var(--text-muted);">Fresh Mart — Yesterday</div>
+      </div>
+      <div style="text-align:center;padding:16px;background:#e8f0fe;border-radius:var(--radius-md);">
+        <div style="font-size:1.6rem;margin-bottom:6px;">✅</div>
+        <div style="font-size:0.78rem;font-weight:700;">Verified Badge</div>
+        <div style="font-size:0.7rem;color:var(--text-muted);">Aadhaar approved — 2 days ago</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align:center;color:var(--text-muted);font-size:0.78rem;padding:16px 0;">
+    Designed and Developed by <strong style="color:var(--green-dark);">Venu Kumar</strong> · Adoni, Kurnool District, Andhra Pradesh, India
+  </div>
+</main>
+
+<div class="ai-float" title="Telugu AI Assistant"><i class="fa-solid fa-microphone"></i></div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

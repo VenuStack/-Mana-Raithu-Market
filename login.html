@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login – Mana Raithu Market</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<nav class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-icon"><i class="fa-solid fa-seedling"></i></div>
+      <div class="logo-text"><div class="primary">మన రైతు Market</div><div class="secondary">Mana Raithu Market</div></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="marketplace.html">Marketplace</a></li>
+      <li><a href="bulk-orders.html">Bulk Orders</a></li>
+      <li><a href="farmer-dashboard.html">Dashboard</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="lang-btn">తె / EN</button>
+      <a href="login.html" class="btn btn-outline btn-sm">Login</a>
+      <a href="register.html" class="btn btn-primary btn-sm">Register</a>
+    </div>
+    <div class="nav-toggle"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<section class="page-header">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a><span>›</span><span>Login</span></div>
+    <h1>Login to Your Farmer Account</h1>
+    <p>Enter your registered email and password to manage orders, inventory, and verification.</p>
+  </div>
+</section>
+<section class="section">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-info-card">
+        <h3>Existing Farmer Login</h3>
+        <p>Use your account to view orders, match buyers, and manage crop listings.</p>
+        <div class="contact-item"><div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div><div><h5>Phone</h5><p>+91 89194 01890</p></div></div>
+        <div class="contact-item"><div class="contact-item-icon"><i class="fa-solid fa-envelope"></i></div><div><h5>Email</h5><p>venurrv143@gmail.com</p></div></div>
+        <div class="contact-item"><div class="contact-item-icon"><i class="fa-solid fa-key"></i></div><div><h5>Demo Password</h5><p>c2026</p></div></div>
+      </div>
+      <div class="bulk-form-card">
+        <h4 style="margin-bottom:22px;">Login to Your Account</h4>
+        <form id="login-form">
+          <div class="form-group"><label>Email</label><input type="email" class="form-input" placeholder="venurrv143@gmail.com" required/></div>
+          <div class="form-group"><label>Password</label><input type="password" class="form-input" placeholder="Enter your password" required/></div>
+          <button type="submit" class="btn btn-primary btn-lg" style="width:100%;justify-content:center;">Login</button>
+        </form>
+        <p style="margin-top:18px;color:var(--text-muted);font-size:0.9rem;">New farmer? <a href="register.html" style="color:var(--green-dark);font-weight:700;">Register here</a> to start selling.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand"><div class="nav-logo" style="margin-bottom:0;"><div class="logo-icon"><i class="fa-solid fa-seedling"></i></div><div class="logo-text"><div class="primary" style="color:white;">మన రైతు Market</div><div class="secondary">Mana Raithu Market</div></div></div><p>Login to manage your farm profile, view orders and access verification features.</p></div>
+      <div class="footer-col"><h5>Platform</h5><ul><li><a href="marketplace.html">Marketplace</a></li><li><a href="bulk-orders.html">Bulk Orders</a></li><li><a href="farmer-dashboard.html">Dashboard</a></li><li><a href="tracking.html">Delivery Tracking</a></li></ul></div>
+      <div class="footer-col"><h5>Resources</h5><ul><li><a href="verification.html">Farmer Verification</a></li><li><a href="gallery.html">Farm Gallery</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h5>Contact</h5><ul><li><a href="tel:+918919401890">+91 89194 01890</a></li><li><a href="mailto:venurrv143@gmail.com">venurrv143@gmail.com</a></li><li><a href="#">Adoni, Kurnool</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 Mana Raithu Market. All rights reserved.</p><p><span>Designed and Developed by Venu Kumar</span></p></div>
+  </div>
+</footer>
+<script>
+  document.getElementById('login-form').addEventListener('submit', function(event){
+    event.preventDefault();
+    window.location.href = 'farmer-dashboard.html';
+  });
+</script>
+  <script src="js/main.js"></script>
+</body>
+</html>
