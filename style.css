@@ -1,0 +1,3328 @@
+﻿/* ============================================================
+   MANA RAITHU MARKET - Main Stylesheet
+   Designed and Developed by Venu Kumar
+   Adoni, Kurnool District, Andhra Pradesh, India
+
+   BEGINNER-FRIENDLY VERSION
+   All color values, sizes, and shadows are written directly
+   so you can easily find and change them.
+
+   COLOR REFERENCE (used throughout this file):
+   Dark Green      : #1a5c2a
+   Medium Green    : #2d8c47
+   Light Green     : #4caf65
+   Pale Green      : #e8f5ec
+   Gold/Yellow     : #f5a623
+   Light Gold      : #ffd97d
+   Off-White BG    : #f7faf8
+   Dark Text       : #0f2318
+   Medium Text     : #3a5244
+   Muted/Gray Text : #7a9e8a
+   White           : #ffffff
+   ============================================================ */
+
+
+/* ============================================================
+   SECTION 1: RESET & BASE STYLES
+   These rules remove default browser styles and set up basics
+   ============================================================ */
+
+/* Remove default margin and padding from all elements */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Enable smooth scrolling when clicking anchor links */
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+/* Set the main font and background color for the whole page */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f7faf8;
+  color: #0f2318;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* Remove underline from all links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Make images responsive */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Remove bullet points from lists */
+ul {
+  list-style: none;
+}
+
+
+/* ============================================================
+   SECTION 2: UTILITY CLASSES
+   Reusable helper classes used across multiple pages
+   ============================================================ */
+
+/* Center content and limit max width */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Large section padding */
+.section {
+  padding: 80px 0;
+}
+
+/* Smaller section padding */
+.section-sm {
+  padding: 48px 0;
+}
+
+
+/* ============================================================
+   SECTION 3: BADGE STYLES
+   Small colored label chips used on crop cards and status indicators
+   ============================================================ */
+
+/* Base badge style */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 14px;
+  border-radius: 99px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Green badge - for organic, verified, etc. */
+.badge-green {
+  background-color: #e8f5ec;
+  color: #1a5c2a;
+}
+
+/* Gold badge - for premium, hot deals, etc. */
+.badge-gold {
+  background-color: #fff8e6;
+  color: #b07d00;
+}
+
+/* Orange badge - for warnings, growing demand */
+.badge-orange {
+  background-color: #fff0e6;
+  color: #c45c00;
+}
+
+/* Red badge - for urgent, flash sale */
+.badge-red {
+  background-color: #fde8e8;
+  color: #b00020;
+}
+
+
+/* ============================================================
+   SECTION 4: BUTTON STYLES
+   Reusable button classes for all call-to-action elements
+   ============================================================ */
+
+/* Base button - shared styles for all buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 28px;
+  border-radius: 16px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  white-space: nowrap;
+}
+
+/* Green primary button */
+.btn-primary {
+  background: linear-gradient(135deg, #2d8c47, #1a5c2a);
+  color: #ffffff;
+  box-shadow: 0 4px 20px rgba(45, 140, 71, 0.35);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(45, 140, 71, 0.45);
+}
+
+/* Outlined green button */
+.btn-outline {
+  background: transparent;
+  border: 2px solid #2d8c47;
+  color: #2d8c47;
+}
+
+.btn-outline:hover {
+  background-color: #2d8c47;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* Gold/yellow button */
+.btn-gold {
+  background: linear-gradient(135deg, #f5a623, #e09000);
+  color: #ffffff;
+  box-shadow: 0 4px 20px rgba(245, 166, 35, 0.35);
+}
+
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(245, 166, 35, 0.45);
+}
+
+/* Small button size */
+.btn-sm {
+  padding: 8px 18px;
+  font-size: 0.82rem;
+}
+
+/* Large button size */
+.btn-lg {
+  padding: 16px 40px;
+  font-size: 1rem;
+  border-radius: 28px;
+}
+
+
+/* ============================================================
+   SECTION 5: SECTION HEADING STYLES
+   Styles for section labels, titles, and subtitles
+   ============================================================ */
+
+/* Small uppercase label above section titles */
+.section-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #2d8c47;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Short green line before the label text */
+.section-label::before {
+  content: '';
+  display: inline-block;
+  width: 28px;
+  height: 3px;
+  background-color: #2d8c47;
+  border-radius: 2px;
+}
+
+/* Large section title heading */
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #0f2318;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+/* Subtitle paragraph under section titles */
+.section-sub {
+  font-size: 1rem;
+  color: #7a9e8a;
+  max-width: 560px;
+}
+
+/* Container for the heading group */
+.section-head {
+  margin-bottom: 52px;
+}
+
+/* Centered heading group */
+.section-head.center {
+  text-align: center;
+}
+
+.section-head.center .section-label {
+  justify-content: center;
+}
+
+/* Hide the line when centered */
+.section-head.center .section-label::before {
+  display: none;
+}
+
+.section-head.center .section-sub {
+  margin: 0 auto;
+}
+
+
+/* ============================================================
+   SECTION 6: GLASS CARD EFFECT
+   Semi-transparent frosted glass card style
+   ============================================================ */
+
+.glass {
+  background-color: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 16px;
+}
+
+
+/* ============================================================
+   SECTION 7: GENERIC CARD STYLE
+   White box card with shadow and hover lift effect
+   ============================================================ */
+
+.card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(26, 92, 42, 0.10);
+  border: 1px solid rgba(45, 140, 71, 0.18);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 6px 28px rgba(26, 92, 42, 0.15);
+  transform: translateY(-4px);
+}
+
+
+/* ============================================================
+   SECTION 8: NAVIGATION BAR
+   Fixed top navigation with glass effect
+   ============================================================ */
+
+/* Fixed navbar at top of page */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 2px 12px rgba(26, 92, 42, 0.10);
+}
+
+/* Navbar inner flex container */
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  height: 70px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Logo area - icon + text side by side */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Square icon box for the logo */
+.logo-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #2d8c47, #1a5c2a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: white;
+  box-shadow: 0 4px 14px rgba(45, 140, 71, 0.4);
+}
+
+/* Logo text container */
+.logo-text {
+  line-height: 1.1;
+}
+
+/* Main logo name */
+.logo-text .primary {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #1a5c2a;
+}
+
+/* Tagline under logo name */
+.logo-text .secondary {
+  font-size: 0.65rem;
+  font-weight: 500;
+  color: #7a9e8a;
+  letter-spacing: 0.5px;
+}
+
+/* Navigation links row */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Individual nav link */
+.nav-links a {
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #3a5244;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover and active state for nav links */
+.nav-links a:hover,
+.nav-links a.active {
+  background-color: #e8f5ec;
+  color: #1a5c2a;
+}
+
+/* Right side of navbar - buttons */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Language switch button */
+.lang-btn {
+  padding: 6px 12px;
+  border-radius: 8px;
+  background-color: #e8f5ec;
+  border: 1px solid rgba(45, 140, 71, 0.18);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #1a5c2a;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.lang-btn:hover {
+  background-color: #2d8c47;
+  color: white;
+}
+
+/* Hamburger menu for mobile - hidden on desktop */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+}
+
+/* Each line of the hamburger icon */
+.nav-toggle span {
+  width: 24px;
+  height: 2.5px;
+  background-color: #1a5c2a;
+  border-radius: 2px;
+  transition: transform 0.3s ease;
+}
+
+
+/* ============================================================
+   SECTION 9: HERO SECTION
+   Full-screen landing area with background image
+   ============================================================ */
+
+/* Hero background: green gradient layered over photo */
+.hero {
+  min-height: 100vh;
+  background:
+    linear-gradient(160deg, rgba(26, 92, 42, 0.88) 0%, rgba(45, 140, 71, 0.75) 50%, rgba(76, 175, 101, 0.60) 100%),
+    url('https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=1800&q=80') center center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  padding: 100px 0 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative radial green glow on right side */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse at 70% 50%, rgba(76, 175, 101, 0.25) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+/* Two-column grid inside the hero */
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Small pill tag above the heading */
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 6px 16px;
+  border-radius: 99px;
+  margin-bottom: 24px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #ffd97d;
+  letter-spacing: 1px;
+}
+
+/* Main heading in hero */
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 900;
+  color: white;
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+
+/* Gold colored word inside hero h1 */
+.hero h1 span {
+  color: #ffd97d;
+}
+
+/* Telugu text below heading */
+.hero-telugu {
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* Description paragraph */
+.hero p {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.82);
+  margin-bottom: 36px;
+  max-width: 480px;
+}
+
+/* Row of hero action buttons */
+.hero-btns {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* Stat card on the right side of hero */
+.hero-card {
+  background-color: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 28px;
+  padding: 40px 36px;
+  box-shadow: 0 16px 56px rgba(26, 92, 42, 0.20);
+}
+
+.hero-card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1a5c2a;
+  margin-bottom: 24px;
+}
+
+/* 2x2 grid of stats inside the card */
+.stat-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* Individual stat item */
+.stat-item {
+  text-align: center;
+  padding: 18px 12px;
+  background-color: #e8f5ec;
+  border-radius: 16px;
+}
+
+/* Big number */
+.stat-item .num {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #1a5c2a;
+  line-height: 1;
+}
+
+/* Label under the number */
+.stat-item .lbl {
+  font-size: 0.72rem;
+  color: #7a9e8a;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+/* Scroll indicator at bottom of hero */
+.hero-scroll {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.72rem;
+  font-weight: 500;
+  animation: bounce 2s infinite;
+}
+
+.hero-scroll i {
+  font-size: 1.2rem;
+}
+
+/* Bounce animation for the scroll arrow */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(8px);
+  }
+}
+
+
+/* ============================================================
+   SECTION 10: STATS BAR
+   Dark green strip with 4 key statistics
+   ============================================================ */
+
+.stats-bar {
+  background-color: #1a5c2a;
+  padding: 32px 0;
+}
+
+/* 4 equal columns */
+.stats-bar-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  text-align: center;
+}
+
+/* Each stat column */
+.stats-bar-item {
+  padding: 16px 20px;
+  position: relative;
+}
+
+/* Thin vertical divider between columns */
+.stats-bar-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 20%;
+  bottom: 20%;
+  width: 1px;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Big gold number */
+.stats-bar-item .num {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #ffd97d;
+  line-height: 1;
+}
+
+/* Label text under number */
+.stats-bar-item .lbl {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 6px;
+}
+
+
+/* ============================================================
+   SECTION 11: FEATURES GRID
+   3-column grid of feature cards
+   ============================================================ */
+
+/* 3 equal columns */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* White feature card */
+.feature-card {
+  padding: 36px 28px;
+  background-color: white;
+  border-radius: 16px;
+  border: 1px solid rgba(45, 140, 71, 0.18);
+  box-shadow: 0 2px 12px rgba(26, 92, 42, 0.10);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Colored top border stripe */
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #2d8c47, #4caf65);
+}
+
+.feature-card:hover {
+  box-shadow: 0 6px 28px rgba(26, 92, 42, 0.15);
+  transform: translateY(-6px);
+}
+
+/* Icon box inside feature card */
+.feature-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background-color: #e8f5ec;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #2d8c47;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+/* Icon changes to white-on-green when card is hovered */
+.feature-card:hover .feature-icon {
+  background-color: #2d8c47;
+  color: white;
+  transform: scale(1.1);
+}
+
+.feature-card h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.feature-card p {
+  font-size: 0.88rem;
+  color: #7a9e8a;
+}
+
+
+/* ============================================================
+   SECTION 12: CROP CARDS (PRODUCT CARDS)
+   Cards showing individual crops for sale
+   ============================================================ */
+
+/* 4-column grid of crop cards */
+.crops-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+/* Individual crop card */
+.crop-card {
+  background-color: white;
+  border-radius: 16px;
+  border: 1px solid rgba(45, 140, 71, 0.18);
+  box-shadow: 0 2px 12px rgba(26, 92, 42, 0.10);
+  overflow: hidden;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.crop-card:hover {
+  box-shadow: 0 6px 28px rgba(26, 92, 42, 0.15);
+  transform: translateY(-6px);
+}
+
+/* Top image/emoji area of crop card */
+.crop-img {
+  height: 160px;
+  background-color: #e8f5ec;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5rem;
+  position: relative;
+}
+
+/* Badges in top-left corner of image */
+.crop-badges {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Text content area of crop card */
+.crop-body {
+  padding: 18px 16px;
+}
+
+.crop-body h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+/* Farmer name line */
+.crop-farmer {
+  font-size: 0.78rem;
+  color: #7a9e8a;
+  margin-bottom: 10px;
+}
+
+.crop-farmer i {
+  color: #2d8c47;
+  margin-right: 4px;
+}
+
+/* Price and stock on same row */
+.crop-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+/* Big price display */
+.crop-price {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #1a5c2a;
+}
+
+/* Small unit text after price */
+.crop-price span {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: #7a9e8a;
+}
+
+.crop-stock {
+  font-size: 0.75rem;
+  color: #7a9e8a;
+}
+
+.crop-harvest {
+  font-size: 0.72rem;
+  color: #7a9e8a;
+  margin-bottom: 12px;
+}
+
+
+/* ============================================================
+   SECTION 13: WHY CHOOSE US SECTION
+   Dark green section explaining farmer benefits
+   ============================================================ */
+
+.why-section {
+  background-color: #1a5c2a;
+  color: white;
+}
+
+/* Two-column layout */
+.why-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+/* Stack of benefit points */
+.why-points {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-top: 32px;
+}
+
+/* Individual benefit row */
+.why-point {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  padding: 20px;
+  border-radius: 16px;
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.why-point:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+/* Small square icon in the benefit row */
+.why-point-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  background-color: #2d8c47;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.why-point h5 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.why-point p {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+/* Income comparison card on the right side */
+.profit-card {
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 28px;
+  padding: 40px;
+}
+
+/* Each income bar row */
+.profit-bar {
+  margin: 16px 0;
+}
+
+/* Label + value row above the bar */
+.profit-bar-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  margin-bottom: 6px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Background track of progress bar */
+.profit-bar-track {
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0.12);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+/* Filled portion of progress bar */
+.profit-bar-fill {
+  height: 100%;
+  border-radius: 5px;
+  transition: width 1s ease;
+}
+
+/* Gold bar fill color */
+.fill-gold {
+  background: linear-gradient(90deg, #f5a623, #ffd97d);
+}
+
+/* Green bar fill color */
+.fill-green {
+  background: linear-gradient(90deg, #2d8c47, #4caf65);
+}
+
+/* Light green bar fill color */
+.fill-light {
+  background: linear-gradient(90deg, #6fcf97, #b7ebc5);
+}
+
+
+/* ============================================================
+   SECTION 14: TESTIMONIAL CARDS
+   3-column grid of farmer success story cards
+   ============================================================ */
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* Individual testimonial card */
+.testimonial-card {
+  padding: 32px 28px;
+  background-color: white;
+  border-radius: 16px;
+  border: 1px solid rgba(45, 140, 71, 0.18);
+  box-shadow: 0 2px 12px rgba(26, 92, 42, 0.10);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  position: relative;
+}
+
+.testimonial-card:hover {
+  box-shadow: 0 6px 28px rgba(26, 92, 42, 0.15);
+  transform: translateY(-4px);
+}
+
+/* Large decorative quotation mark in top-right corner */
+.testimonial-card::before {
+  content: '\201C';
+  position: absolute;
+  top: 12px;
+  right: 20px;
+  font-size: 5rem;
+  color: #e8f5ec;
+  font-family: Georgia, serif;
+  line-height: 1;
+}
+
+/* Yellow star rating row */
+.stars {
+  color: #f5a623;
+  font-size: 0.9rem;
+  margin-bottom: 14px;
+  letter-spacing: 2px;
+}
+
+.testimonial-card p {
+  font-size: 0.88rem;
+  color: #7a9e8a;
+  margin-bottom: 20px;
+}
+
+/* Author row at bottom of card */
+.t-author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Round author icon/avatar */
+.t-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #e8f5ec;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.t-author h5 {
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.t-author span {
+  font-size: 0.75rem;
+  color: #7a9e8a;
+}
+
+
+/* ============================================================
+   SECTION 15: NEWSLETTER SECTION
+   Green email signup strip
+   ============================================================ */
+
+.newsletter {
+  background: linear-gradient(135deg, #2d8c47, #1a5c2a);
+  border-radius: 28px;
+  padding: 60px 48px;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative circle in top-right */
+.newsletter::before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  right: -40px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.06);
+}
+
+.newsletter h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.newsletter p {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 32px;
+}
+
+/* Input + button row */
+.newsletter-form {
+  display: flex;
+  gap: 12px;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* Email input box */
+.newsletter-form input {
+  flex: 1;
+  padding: 14px 20px;
+  border-radius: 16px;
+  border: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  background-color: rgba(255, 255, 255, 0.15);
+  color: white;
+}
+
+.newsletter-form input::placeholder {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.newsletter-form input:focus {
+  outline: 2px solid #ffd97d;
+}
+
+
+/* ============================================================
+   SECTION 16: FOOTER
+   Dark footer with links and credits
+   ============================================================ */
+
+.footer {
+  background-color: #0f2318;
+  color: white;
+  padding: 64px 0 0;
+}
+
+/* 4-column footer grid */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+}
+
+/* Footer brand/about text */
+.footer-brand p {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.55);
+  margin: 16px 0 24px;
+  max-width: 280px;
+}
+
+/* Row of social media icon buttons */
+.footer-socials {
+  display: flex;
+  gap: 10px;
+}
+
+/* Square social icon button */
+.social-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.7);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-btn:hover {
+  background-color: #2d8c47;
+  color: white;
+}
+
+/* Footer column heading */
+.footer-col h5 {
+  font-size: 0.88rem;
+  font-weight: 700;
+  margin-bottom: 18px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Footer links stacked vertically */
+.footer-col ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-col ul li a {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.5);
+  transition: color 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+  color: #4caf65;
+}
+
+/* Bottom copyright strip */
+.footer-bottom {
+  margin-top: 48px;
+  padding: 20px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.footer-bottom p {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.38);
+}
+
+/* Developer credit highlighted in green */
+.footer-bottom span {
+  color: #4caf65;
+  font-weight: 600;
+}
+
+
+/* ============================================================
+   SECTION 17: PAGE HEADER
+   Used on inner pages (marketplace, contact, etc.)
+   ============================================================ */
+
+.page-header {
+  background: linear-gradient(135deg, #1a5c2a, #2d8c47);
+  padding: 120px 0 60px;
+  color: white;
+}
+
+.page-header h1 {
+  font-size: 2.6rem;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+.page-header p {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1rem;
+}
+
+/* Breadcrumb navigation trail */
+.breadcrumb {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 20px;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.breadcrumb a {
+  color: #ffd97d;
+}
+
+.breadcrumb span {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+
+/* ============================================================
+   SECTION 18: DASHBOARD LAYOUT
+   Sidebar + main content layout for the farmer dashboard
+   ============================================================ */
+
+/* Two columns: sidebar on left, main on right */
+.dashboard-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 0;
+  min-height: 100vh;
+}
+
+/* Fixed dark green sidebar */
+.sidebar {
+  background-color: #1a5c2a;
+  width: 260px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 20px 0;
+  z-index: 900;
+  transition: transform 0.3s ease;
+}
+
+/* Logo area at the top of sidebar */
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 20px 24px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 16px;
+}
+
+.sidebar-logo .logo-icon {
+  width: 38px;
+  height: 38px;
+  font-size: 1.2rem;
+}
+
+.sidebar-logo .primary {
+  color: white;
+  font-size: 0.9rem;
+}
+
+.sidebar-logo .secondary {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 0.6rem;
+}
+
+/* Sidebar group wrapper with padding */
+.sidebar-section {
+  padding: 0 12px;
+  margin-bottom: 8px;
+}
+
+/* Tiny uppercase label above sidebar link groups */
+.sidebar-section-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.35);
+  padding: 0 10px;
+  margin-bottom: 6px;
+}
+
+/* A single sidebar navigation link */
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 14px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.65);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+  margin-bottom: 2px;
+}
+
+.sidebar-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+/* Active/selected sidebar link */
+.sidebar-link.active {
+  background-color: #2d8c47;
+  color: white;
+}
+
+/* Icon inside sidebar link */
+.sidebar-link i {
+  font-size: 1rem;
+  width: 20px;
+  text-align: center;
+}
+
+/* Gold number badge in sidebar link */
+.sidebar-badge {
+  margin-left: auto;
+  background-color: #f5a623;
+  color: white;
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: 99px;
+}
+
+/* Main content area offset from sidebar */
+.dashboard-main {
+  margin-left: 260px;
+  padding: 80px 32px 40px;
+}
+
+/* Fixed top bar above dashboard content */
+.dashboard-topbar {
+  position: fixed;
+  top: 0;
+  left: 260px;
+  right: 0;
+  height: 70px;
+  background-color: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(45, 140, 71, 0.18);
+  z-index: 800;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+}
+
+/* Left side of topbar */
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Search input with icon */
+.search-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #f7faf8;
+  border: 1px solid rgba(45, 140, 71, 0.18);
+  border-radius: 48px;
+  padding: 8px 18px;
+  width: 280px;
+}
+
+.search-bar input {
+  border: none;
+  background: transparent;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.85rem;
+  color: #0f2318;
+  width: 100%;
+}
+
+.search-bar input:focus {
+  outline: none;
+}
+
+.search-bar i {
+  color: #7a9e8a;
+}
+
+/* Right side of topbar */
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Square icon button for notifications */
+.notif-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  background-color: #f7faf8;
+  border: 1px solid rgba(45, 140, 71, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  color: #3a5244;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  position: relative;
+}
+
+.notif-btn:hover {
+  background-color: #e8f5ec;
+  color: #1a5c2a;
+}
+
+/* Small dot indicator on notification button */
+.notif-dot {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 8px;
+  height: 8px;
+  background-color: #f5a623;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+/* Pill-shaped profile display */
+.profile-pill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #e8f5ec;
+  border: 1px solid rgba(45, 140, 71, 0.18);
+  border-radius: 48px;
+  padding: 6px 16px 6px 6px;
+  cursor: pointer;
+}
+
+/* Round avatar circle */
+.profile-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: #2d8c47;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  color: white;
+}
+
+.profile-pill span {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #1a5c2a;
+}
+
+
+/* ============================================================
+   SECTION 19: DASHBOARD WIDGETS
+   KPI cards, order rows, and widget boxes
+   ============================================================ */
+
+/* Greeting text at top of dashboard */
+.dashboard-greeting {
+  margin-bottom: 28px;
+}
+
+.dashboard-greeting h2 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #0f2318;
+}
+
+.dashboard-greeting p {
+  color: #7a9e8a;
+  font-size: 0.9rem;
+}
+
+/* 4-column KPI card row */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+/* White KPI card */
+.kpi-card {
+  padding: 22px 20px;
+  background-color: white;
+  border-radius: 16px;
+  border: 1px solid rgba(45, 140, 71, 0.18);
+  box-shadow: 0 2px 12px rgba(26, 92, 42, 0.10);
+}
+
+/* Icon box inside KPI card */
+.kpi-card .kpi-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  margin-bottom: 14px;
+}
+
+/* Large value number */
+.kpi-card .kpi-val {
+  font-size: 1.7rem;
+  font-weight: 900;
+  color: #0f2318;
+  line-height: 1;
+}
+
+/* Small label under the value */
+.kpi-card .kpi-label {
+  font-size: 0.78rem;
+  color: #7a9e8a;
+  margin-top: 4px;
+}
+
+/* Trend indicator row */
+.kpi-card .kpi-change {
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Green for positive change */
+.kpi-change.up {
+  color: #1db954;
+}
+
+/* Red for negative change */
+.kpi-change.down {
+  color: #e53e3e;
+}
+
+/* Icon colors for each KPI card type */
+.kpi-green .kpi-icon {
+  background-color: #e8f5ec;
+  color: #2d8c47;
+}
+
+.kpi-gold .kpi-icon {
+  background-color: #fff8e6;
+  color: #f5a623;
+}
+
+.kpi-blue .kpi-icon {
+  background-color: #e8f0fe;
+  color: #4285f4;
+}
+
+.kpi-orange .kpi-icon {
+  background-color: #fff0e6;
+  color: #e67700;
+}
+
+/* 2-column equal layout */
+.dash-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  margin-bottom: 22px;
+}
+
+/* 2-column layout with wider left column */
+.dash-grid-3 {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 22px;
+  margin-bottom: 22px;
+}
+
+/* Generic widget card */
+.widget-card {
+  background-color: white;
+  border-radius: 16px;
+  border: 1px solid rgba(45, 140, 71, 0.18);
+  box-shadow: 0 2px 12px rgba(26, 92, 42, 0.10);
+  overflow: hidden;
+}
+
+/* Widget title row */
+.widget-header {
+  padding: 18px 22px;
+  border-bottom: 1px solid rgba(45, 140, 71, 0.18);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.widget-header h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.widget-body {
+  padding: 20px 22px;
+}
+
+/* Single row in an order list */
+.order-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(45, 140, 71, 0.18);
+}
+
+.order-row:last-child {
+  border-bottom: none;
+}
+
+.order-info h5 {
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.order-info p {
+  font-size: 0.75rem;
+  color: #7a9e8a;
+}
+
+.order-meta {
+  text-align: right;
+}
+
+.order-meta .price {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1a5c2a;
+}
+
+.order-meta .status {
+  font-size: 0.72rem;
+}
+
+/* Progress bar group for inventory */
+.inventory-bar {
+  margin-bottom: 14px;
+}
+
+/* Label row above inventory bar */
+.inv-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  margin-bottom: 5px;
+}
+
+/* Background track */
+.inv-track {
+  height: 8px;
+  background-color: #e8f5ec;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* Green fill */
+.inv-fill {
+  height: 100%;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #2d8c47, #4caf65);
+}
+
+/* Notification list item */
+.notif-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(45, 140, 71, 0.18);
+}
+
+.notif-item:last-child {
+  border-bottom: none;
+}
+
+/* Colored dot on left side of notification */
+.notif-dot-icon {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+
+.notif-item p {
+  font-size: 0.8rem;
+  color: #3a5244;
+}
+
+.notif-item time {
+  font-size: 0.7rem;
+  color: #7a9e8a;
+}
+
+
+/* ============================================================
+   SECTION 20: FARMER PROFILE CARD
+   Green banner card at top of dashboard
+   ============================================================ */
+
+.farmer-profile-card {
+  background: linear-gradient(135deg, #1a5c2a, #2d8c47);
+  border-radius: 16px;
+  padding: 32px 28px;
+  color: white;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+/* Round photo placeholder */
+.farmer-photo {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 3px solid rgba(255, 255, 255, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  flex-shrink: 0;
+}
+
+.farmer-profile-card h3 {
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.farmer-profile-card .tag {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 8px;
+}
+
+.farmer-profile-card .meta {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* Row of quick stats */
+.farmer-meta-row {
+  display: flex;
+  gap: 24px;
+  margin-top: 10px;
+}
+
+.farmer-meta-item .val {
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.farmer-meta-item .lbl {
+  font-size: 0.68rem;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+
+/* ============================================================
+   SECTION 21: MARKETPLACE LAYOUT
+   Sidebar filter + product grid
+   ============================================================ */
+
+/* Two columns: filter sidebar + products */
+.marketplace-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 32px;
+}
+
+/* Filter sidebar is just a container (no special style needed) */
+.filter-sidebar {
+  /* static sidebar for marketplace */
+}
+
+/* White filter card */
+.filter-card {
+  background-color: white;
+  border-radius: 16px;
+  border: 1px solid rgba(45, 140, 71, 0.18);
+  padding: 22px;
+  margin-bottom: 18px;
+}
+
+.filter-card h4 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+/* One filter option row */
+.filter-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 0;
+  font-size: 0.83rem;
+  color: #3a5244;
+  cursor: pointer;
+}
+
+/* Checkbox square */
+.filter-check {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(45, 140, 71, 0.18);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  color: white;
+  background-color: white;
+  flex-shrink: 0;
+}
+
+/* Selected/active checkbox */
+.filter-option.active .filter-check {
+  background-color: #2d8c47;
+  border-color: #2d8c47;
+}
+
+/* Category filter pill chip */
+.category-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 99px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 2px solid rgba(45, 140, 71, 0.18);
+  margin: 4px;
+  transition: border-color 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hovered or active chip */
+.category-chip.active,
+.category-chip:hover {
+  border-color: #2d8c47;
+  background-color: #e8f5ec;
+  color: #1a5c2a;
+}
+
+/* 3-column product grid */
+.marketplace-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+
+/* ============================================================
+   SECTION 22: DELIVERY TRACKING TIMELINE
+   Vertical step-by-step delivery status
+   ============================================================ */
+
+/* Timeline container with left padding for the line */
+.tracking-timeline {
+  position: relative;
+  padding-left: 32px;
+}
+
+/* Vertical connecting line */
+.tracking-timeline::before {
+  content: '';
+  position: absolute;
+  left: 11px;
+  top: 20px;
+  bottom: 20px;
+  width: 2px;
+  background-color: rgba(45, 140, 71, 0.18);
+}
+
+/* One step in the timeline */
+.timeline-step {
+  position: relative;
+  margin-bottom: 32px;
+}
+
+/* Round dot on the left */
+.timeline-dot {
+  position: absolute;
+  left: -32px;
+  top: 3px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: white;
+  border: 2px solid rgba(45, 140, 71, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+}
+
+/* Completed step - green filled dot */
+.timeline-dot.done {
+  background-color: #2d8c47;
+  border-color: #2d8c47;
+  color: white;
+}
+
+/* Current step - gold filled dot */
+.timeline-dot.active {
+  background-color: #f5a623;
+  border-color: #f5a623;
+  color: white;
+}
+
+.timeline-step h5 {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.timeline-step p {
+  font-size: 0.8rem;
+  color: #7a9e8a;
+}
+
+.timeline-step time {
+  font-size: 0.72rem;
+  color: #7a9e8a;
+}
+
+
+/* ============================================================
+   SECTION 23: VOICE ASSISTANT SECTION
+   Dark section with mic button and AI chat window
+   ============================================================ */
+
+.voice-section {
+  background: linear-gradient(135deg, #0d3320, #1a5c2a);
+  color: white;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Decorative circle in top-right corner */
+.voice-section::before {
+  content: '';
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  background-color: rgba(76, 175, 101, 0.12);
+}
+
+/* Two-column layout */
+.voice-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+/* Round microphone button */
+.mic-btn {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2d8c47, #4caf65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  cursor: pointer;
+  margin: 32px auto;
+  box-shadow: 0 0 0 16px rgba(76, 175, 101, 0.15), 0 0 0 32px rgba(76, 175, 101, 0.08);
+  transition: transform 0.3s ease;
+  animation: pulse-ring 2.5s infinite;
+}
+
+.mic-btn:hover {
+  transform: scale(1.08);
+}
+
+/* Pulse animation for mic button */
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 rgba(76, 175, 101, 0.4), 0 0 0 0 rgba(76, 175, 101, 0.2);
+  }
+  70% {
+    box-shadow: 0 0 0 20px rgba(76, 175, 101, 0), 0 0 0 40px rgba(76, 175, 101, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(76, 175, 101, 0), 0 0 0 0 rgba(76, 175, 101, 0);
+  }
+}
+
+/* Stack of voice command examples */
+.voice-commands {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+/* Single voice command row */
+.voice-cmd {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background-color: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 14px 18px;
+  font-size: 0.88rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.voice-cmd:hover {
+  background-color: rgba(255, 255, 255, 0.14);
+}
+
+.voice-cmd i {
+  color: #4caf65;
+}
+
+/* Telugu subtitle under the command */
+.voice-cmd-te {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.55);
+  display: block;
+}
+
+/* AI chat window panel */
+.ai-chat-window {
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 28px;
+  overflow: hidden;
+}
+
+/* Chat window header bar */
+.ai-chat-header {
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Green online indicator dot */
+.ai-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #4caf65;
+}
+
+/* Messages area */
+.ai-chat-msgs {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Base chat message bubble */
+.msg {
+  max-width: 80%;
+  padding: 12px 16px;
+  border-radius: 16px;
+  font-size: 0.83rem;
+}
+
+/* Bot/AI message - left aligned */
+.msg.bot {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 4px 16px 16px 16px;
+}
+
+/* User message - right aligned */
+.msg.user {
+  background-color: #2d8c47;
+  align-self: flex-end;
+  border-radius: 16px 4px 16px 16px;
+}
+
+
+/* ============================================================
+   SECTION 24: FLOATING AI ASSISTANT BUTTON
+   Fixed round button in bottom-right corner
+   ============================================================ */
+
+.ai-float {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 1000;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2d8c47, #1a5c2a);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 8px 28px rgba(45, 140, 71, 0.45);
+  transition: transform 0.3s ease;
+  animation: float-bob 3s ease-in-out infinite;
+}
+
+.ai-float:hover {
+  transform: scale(1.12);
+}
+
+/* Gentle up-down floating animation */
+@keyframes float-bob {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+
+/* ============================================================
+   SECTION 25: PRICE CARDS
+   Cards showing current market price and AI suggestion
+   ============================================================ */
+
+/* 3-column grid */
+.price-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+/* White price card */
+.price-card {
+  background-color: white;
+  border-radius: 16px;
+  border: 1px solid rgba(45, 140, 71, 0.18);
+  box-shadow: 0 2px 12px rgba(26, 92, 42, 0.10);
+  padding: 24px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.price-card:hover {
+  box-shadow: 0 6px 28px rgba(26, 92, 42, 0.15);
+  transform: translateY(-4px);
+}
+
+/* Crop emoji */
+.price-crop {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.price-card h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+/* Large price number */
+.price-current {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #1a5c2a;
+}
+
+/* Small "per kg" unit text */
+.price-current span {
+  font-size: 0.75rem;
+  color: #7a9e8a;
+  font-weight: 500;
+}
+
+/* Price change trend row */
+.price-trend {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  margin-top: 6px;
+}
+
+/* Green = price going up */
+.price-trend.up {
+  color: #1db954;
+}
+
+/* Red = price going down */
+.price-trend.dn {
+  color: #e53e3e;
+}
+
+/* Progress bar showing price level */
+.price-bar {
+  height: 5px;
+  border-radius: 3px;
+  background-color: #e8f5ec;
+  margin: 12px 0;
+}
+
+.price-bar-fill {
+  height: 100%;
+  border-radius: 3px;
+  background: linear-gradient(90deg, #2d8c47, #4caf65);
+}
+
+.suggested {
+  font-size: 0.78rem;
+  color: #7a9e8a;
+}
+
+.suggested strong {
+  color: #1a5c2a;
+}
+
+
+/* ============================================================
+   SECTION 26: DEMAND PREDICTION CARDS
+   4-column grid showing upcoming crop demand
+   ============================================================ */
+
+.demand-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+/* Individual demand card */
+.demand-card {
+  background-color: white;
+  border-radius: 16px;
+  border: 1px solid rgba(45, 140, 71, 0.18);
+  padding: 22px;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(26, 92, 42, 0.10);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.demand-card:hover {
+  box-shadow: 0 6px 28px rgba(26, 92, 42, 0.15);
+  transform: translateY(-4px);
+}
+
+.demand-emoji {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.demand-card h5 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.demand-card p {
+  font-size: 0.78rem;
+  color: #7a9e8a;
+  margin-bottom: 12px;
+}
+
+/* Demand level bar (background) */
+.demand-meter {
+  height: 6px;
+  background-color: #e8f5ec;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+/* Demand level bar (fill) - set width with inline style */
+.demand-fill {
+  height: 100%;
+  border-radius: 3px;
+}
+
+
+/* ============================================================
+   SECTION 27: EMERGENCY CROP SALE CARDS
+   Urgent flash-sale cards with red styling
+   ============================================================ */
+
+.emergency-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+/* White card with red border */
+.emergency-card {
+  background-color: white;
+  border-radius: 16px;
+  border: 2px solid #ffcccc;
+  box-shadow: 0 2px 12px rgba(26, 92, 42, 0.10);
+  overflow: hidden;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.emergency-card:hover {
+  box-shadow: 0 6px 28px rgba(26, 92, 42, 0.15);
+  transform: translateY(-4px);
+}
+
+/* Red header of the card */
+.emergency-header {
+  background: linear-gradient(135deg, #c0392b, #e74c3c);
+  color: white;
+  padding: 14px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.emergency-header h5 {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+/* Countdown timer pill */
+.countdown {
+  font-size: 0.78rem;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 3px 10px;
+  border-radius: 99px;
+}
+
+.emergency-body {
+  padding: 18px;
+}
+
+/* Big discounted price */
+.emergency-body .price-drop {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: #c0392b;
+  margin-bottom: 4px;
+}
+
+/* Original price with strikethrough */
+.emergency-body .original {
+  font-size: 0.78rem;
+  color: #7a9e8a;
+  text-decoration: line-through;
+}
+
+
+/* ============================================================
+   SECTION 28: LEARNING CENTER CARDS
+   Video-style learning cards with hover play overlay
+   ============================================================ */
+
+.learning-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+/* White learning card */
+.learn-card {
+  background-color: white;
+  border-radius: 16px;
+  border: 1px solid rgba(45, 140, 71, 0.18);
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(26, 92, 42, 0.10);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.learn-card:hover {
+  box-shadow: 0 6px 28px rgba(26, 92, 42, 0.15);
+  transform: translateY(-4px);
+}
+
+/* Colored thumbnail area */
+.learn-thumb {
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5rem;
+  position: relative;
+}
+
+/* Green thumbnail background */
+.learn-thumb.green {
+  background-color: #e8f5ec;
+}
+
+/* Gold thumbnail background */
+.learn-thumb.gold {
+  background-color: #fff8e6;
+}
+
+/* Blue thumbnail background */
+.learn-thumb.blue {
+  background-color: #e8f0fe;
+}
+
+/* Dark overlay with play button on hover */
+.play-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Show overlay when card is hovered */
+.learn-card:hover .play-overlay {
+  opacity: 1;
+}
+
+.play-overlay i {
+  font-size: 2rem;
+  color: white;
+}
+
+/* Text content of learning card */
+.learn-body {
+  padding: 18px 16px;
+}
+
+.learn-body h5 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.learn-body p {
+  font-size: 0.78rem;
+  color: #7a9e8a;
+  margin-bottom: 12px;
+}
+
+/* Duration and views row */
+.learn-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  color: #7a9e8a;
+}
+
+
+/* ============================================================
+   SECTION 29: VERIFICATION CARDS
+   Document upload and status cards
+   ============================================================ */
+
+.verify-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+/* Centered verification card */
+.verify-card {
+  background-color: white;
+  border-radius: 16px;
+  border: 1px solid rgba(45, 140, 71, 0.18);
+  padding: 28px;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(26, 92, 42, 0.10);
+  transition: box-shadow 0.3s ease;
+}
+
+.verify-card:hover {
+  box-shadow: 0 6px 28px rgba(26, 92, 42, 0.15);
+}
+
+.verify-icon {
+  font-size: 2.8rem;
+  margin-bottom: 14px;
+}
+
+.verify-card h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.verify-card p {
+  font-size: 0.82rem;
+  color: #7a9e8a;
+  margin-bottom: 18px;
+}
+
+/* Dashed upload box */
+.upload-zone {
+  border: 2px dashed rgba(45, 140, 71, 0.18);
+  border-radius: 16px;
+  padding: 22px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: #7a9e8a;
+  cursor: pointer;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+  margin-bottom: 14px;
+}
+
+.upload-zone:hover {
+  border-color: #2d8c47;
+  background-color: #e8f5ec;
+}
+
+.upload-zone i {
+  display: block;
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+  color: #7a9e8a;
+}
+
+/* Verified certificate card - green */
+.cert-card {
+  background: linear-gradient(135deg, #1a5c2a, #2d8c47);
+  border-radius: 16px;
+  padding: 28px 24px;
+  color: white;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative watermark symbol */
+.cert-card::before {
+  content: '\2736';
+  position: absolute;
+  font-size: 8rem;
+  opacity: 0.05;
+  top: -20px;
+  right: -20px;
+}
+
+.cert-seal {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.cert-card h4 {
+  font-size: 1rem;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.cert-card .name {
+  font-size: 1.3rem;
+  font-weight: 900;
+  margin: 8px 0;
+}
+
+.cert-card .sub {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.65);
+}
+
+
+/* ============================================================
+   SECTION 30: GALLERY GRID
+   Photo gallery with hover overlay
+   ============================================================ */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+/* Single gallery item */
+.gallery-item {
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: #e8f5ec;
+  aspect-ratio: 4 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(45, 140, 71, 0.18);
+}
+
+.gallery-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 28px rgba(26, 92, 42, 0.15);
+}
+
+/* First item spans two columns and is wider */
+.gallery-item:nth-child(1) {
+  grid-column: span 2;
+  aspect-ratio: 16 / 7;
+}
+
+/* Dark gradient overlay on hover */
+.gallery-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(26, 92, 42, 0.7), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: flex-end;
+  padding: 16px;
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+
+.gallery-overlay span {
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+
+/* ============================================================
+   SECTION 31: REVIEWS & RATINGS
+   Star rating summary and review cards
+   ============================================================ */
+
+/* Rating summary box at top */
+.review-summary {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 48px;
+  align-items: center;
+  background-color: white;
+  border-radius: 16px;
+  border: 1px solid rgba(45, 140, 71, 0.18);
+  padding: 36px;
+  margin-bottom: 36px;
+  box-shadow: 0 2px 12px rgba(26, 92, 42, 0.10);
+}
+
+/* Left column: big number */
+.big-rating {
+  text-align: center;
+}
+
+.big-rating .num {
+  font-size: 4rem;
+  font-weight: 900;
+  color: #1a5c2a;
+  line-height: 1;
+}
+
+.big-rating .stars {
+  font-size: 1.2rem;
+  margin: 6px 0;
+}
+
+.big-rating p {
+  font-size: 0.8rem;
+  color: #7a9e8a;
+}
+
+/* Right column: bar chart of star distribution */
+.rating-bars {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* One rating bar row (e.g. "5 stars: 80%") */
+.rating-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.rating-row span {
+  font-size: 0.78rem;
+  width: 32px;
+  flex-shrink: 0;
+}
+
+/* Background of rating bar */
+.rating-track {
+  flex: 1;
+  height: 8px;
+  background-color: #e8f5ec;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* Gold fill of rating bar */
+.rating-fill {
+  height: 100%;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #f5a623, #ffd97d);
+}
+
+.rating-row em {
+  font-size: 0.72rem;
+  color: #7a9e8a;
+  font-style: normal;
+  width: 28px;
+  text-align: right;
+}
+
+
+/* ============================================================
+   SECTION 32: BULK ORDERS FORM
+   Hotel/restaurant registration and order form
+   ============================================================ */
+
+/* White form card */
+.bulk-form-card {
+  background-color: white;
+  border-radius: 16px;
+  border: 1px solid rgba(45, 140, 71, 0.18);
+  padding: 36px;
+  box-shadow: 0 2px 12px rgba(26, 92, 42, 0.10);
+}
+
+/* Spacing between form fields */
+.form-group {
+  margin-bottom: 18px;
+}
+
+/* Form field label */
+.form-group label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #3a5244;
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* Text input and textarea */
+.form-input {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1.5px solid rgba(45, 140, 71, 0.18);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.88rem;
+  color: #0f2318;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  background-color: #f7faf8;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #2d8c47;
+  background-color: white;
+  box-shadow: 0 0 0 3px rgba(45, 140, 71, 0.12);
+}
+
+/* Two-column side-by-side form fields */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* Dropdown select field */
+.form-select {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1.5px solid rgba(45, 140, 71, 0.18);
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.88rem;
+  color: #0f2318;
+  background-color: #f7faf8;
+  cursor: pointer;
+}
+
+.form-select:focus {
+  outline: none;
+  border-color: #2d8c47;
+}
+
+/* Taller textarea input */
+textarea.form-input {
+  resize: vertical;
+  min-height: 90px;
+}
+
+/* 3-column partner type cards */
+.partner-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+/* White centered partner type card */
+.partner-card {
+  background-color: white;
+  border-radius: 16px;
+  border: 1px solid rgba(45, 140, 71, 0.18);
+  padding: 28px;
+  text-align: center;
+  box-shadow: 0 2px 12px rgba(26, 92, 42, 0.10);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.partner-card:hover {
+  box-shadow: 0 6px 28px rgba(26, 92, 42, 0.15);
+  transform: translateY(-4px);
+}
+
+.partner-card .icon {
+  font-size: 2.5rem;
+  margin-bottom: 14px;
+}
+
+.partner-card h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.partner-card p {
+  font-size: 0.82rem;
+  color: #7a9e8a;
+  margin-bottom: 16px;
+}
+
+
+/* ============================================================
+   SECTION 33: CONTACT PAGE
+   Contact info card + contact form
+   ============================================================ */
+
+/* Two-column layout */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 40px;
+}
+
+/* Left dark green info card */
+.contact-info-card {
+  background: linear-gradient(135deg, #1a5c2a, #2d8c47);
+  border-radius: 16px;
+  padding: 40px;
+  color: white;
+}
+
+.contact-info-card h3 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.contact-info-card p {
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 32px;
+}
+
+/* Single contact detail row */
+.contact-item {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+/* Square icon box */
+.contact-item-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+.contact-item h5 {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 2px;
+}
+
+.contact-item p {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: white;
+}
+
+
+/* ============================================================
+   SECTION 34: FAQ SECTION
+   Accordion-style FAQ list
+   ============================================================ */
+
+/* FAQ item container */
+.faq-item {
+  background-color: white;
+  border-radius: 16px;
+  border: 1px solid rgba(45, 140, 71, 0.18);
+  padding: 22px 24px;
+  margin-bottom: 14px;
+  box-shadow: 0 2px 12px rgba(26, 92, 42, 0.10);
+}
+
+/* Question row with arrow icon */
+.faq-q {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.faq-q h5 {
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.faq-q i {
+  color: #2d8c47;
+  flex-shrink: 0;
+}
+
+/* Answer text below the question */
+.faq-a {
+  font-size: 0.85rem;
+  color: #7a9e8a;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(45, 140, 71, 0.18);
+}
+
+
+/* ============================================================
+   SECTION 35: ANIMATIONS
+   Simple keyframe animations used across the site
+   ============================================================ */
+
+/* Fade in and slide up from bottom */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply the fade-up animation */
+.fade-up {
+  animation: fadeInUp 0.7s ease both;
+}
+
+/* Animation delay classes for staggered effect */
+.fade-up-d1 {
+  animation-delay: 0.1s;
+}
+
+.fade-up-d2 {
+  animation-delay: 0.2s;
+}
+
+.fade-up-d3 {
+  animation-delay: 0.3s;
+}
+
+/* Shimmer effect (defined but used as needed) */
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+
+/* ============================================================
+   SECTION 36: RESPONSIVE STYLES
+   These rules change the layout at smaller screen sizes.
+   Screens wider than 1100px use the default styles above.
+   ============================================================ */
+
+/* ── Tablet: screens up to 1100px wide ── */
+@media (max-width: 1100px) {
+  /* Features: 3 columns → 2 columns */
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Crops: 4 columns → 2 columns */
+  .crops-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* KPI cards: 4 columns → 2 columns */
+  .kpi-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Footer: 4 columns → 2 columns */
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ── Small Tablet / Large Phone: screens up to 900px ── */
+@media (max-width: 900px) {
+  /* Hero: 2 columns → 1 column */
+  .hero-inner {
+    grid-template-columns: 1fr;
+  }
+
+  /* Hide the stats card on small screens */
+  .hero-card {
+    display: none;
+  }
+
+  /* Why Choose Us: 2 columns → 1 column */
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Voice section: 2 columns → 1 column */
+  .voice-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Testimonials: 3 columns → 1 column */
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Marketplace: hide filter sidebar */
+  .marketplace-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .filter-sidebar {
+    display: none;
+  }
+
+  /* Partner cards: 3 columns → 1 column */
+  .partner-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Contact: 2 columns → 1 column */
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Price cards: 3 columns → 1 column */
+  .price-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Demand cards: 4 columns → 2 columns */
+  .demand-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Stats bar: 4 columns → 2 columns */
+  .stats-bar-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Hide dividers for now-bottom items in 2-column grid */
+  .stats-bar-item:nth-child(2)::after {
+    display: none;
+  }
+
+  .stats-bar-item:nth-child(4)::after {
+    display: none;
+  }
+
+  /* Gallery: 3 columns → 2 columns */
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* First gallery item no longer spans 2 columns */
+  .gallery-item:nth-child(1) {
+    grid-column: span 1;
+    aspect-ratio: 4 / 3;
+  }
+}
+
+/* ── Mobile: screens up to 768px ── */
+@media (max-width: 768px) {
+  /* Hide nav links - show hamburger instead */
+  .nav-links {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-links.nav-open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.98);
+    padding: 16px 24px 24px;
+    gap: 10px;
+    box-shadow: 0 24px 48px rgba(26, 92, 42, 0.18);
+    border-bottom: 1px solid rgba(45, 140, 71, 0.15);
+  }
+
+  .nav-links.nav-open a {
+    padding: 14px 16px;
+    border-radius: 12px;
+    width: 100%;
+    background: #f7faf8;
+  }
+
+  .nav-toggle.toggle-open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .nav-toggle.toggle-open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-toggle.toggle-open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* Reduce section padding */
+  .section {
+    padding: 52px 0;
+  }
+
+  /* Dashboard: hide sidebar on mobile */
+  .dashboard-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    transform: translateX(-100%);
+  }
+
+  /* Main content takes full width */
+  .dashboard-main {
+    margin-left: 0;
+  }
+
+  /* Top bar takes full width */
+  .dashboard-topbar {
+    left: 0;
+  }
+
+  /* KPI cards: 2 per row on mobile */
+  .kpi-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Dashboard grids: 1 column */
+  .dash-grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .dash-grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  /* Crops: 1 column on mobile */
+  .crops-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Features: 1 column on mobile */
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Form: 1 column on mobile */
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  /* Newsletter: more padding */
+  .newsletter {
+    padding: 40px 24px;
+  }
+
+  /* Newsletter form: stack vertically */
+  .newsletter-form {
+    flex-direction: column;
+  }
+
+  /* Footer: 1 column */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  /* Review summary: 1 column */
+  .review-summary {
+    grid-template-columns: 1fr;
+  }
+
+  /* Verify cards: 1 column */
+  .verify-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Emergency cards: 1 column */
+  .emergency-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Learning cards: 1 column */
+  .learning-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Marketplace products: 1 column */
+  .marketplace-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Small Phone: screens up to 480px ── */
+@media (max-width: 480px) {
+  /* Make hero heading smaller on very small screens */
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  /* Stack hero buttons vertically */
+  .hero-btns {
+    flex-direction: column;
+  }
+
+  /* Demand cards: 1 column */
+  .demand-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* KPI cards: 1 column */
+  .kpi-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================================
+   END OF STYLESHEET
+   Mana Raithu Market
+   Designed and Developed by Venu Kumar
+   Adoni, Kurnool District, Andhra Pradesh, India
+   ============================================================ */
